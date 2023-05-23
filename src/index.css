@@ -3,3 +3,82 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.bgGlass {
+  width: 100%;
+  height: 14vh;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.bgGlass:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgb(44, 44, 44);
+  filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.header {
+  background-attachment: fixed;
+}
+
+.header.active {
+  height: 14vh;
+  position: fixed;
+  top: 0;
+  padding-top: 20px;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.scroll-link {
+  /* Define your passive link styles here */
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.scroll-link.active {
+  /* Define your active link styles here */
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  text-underline-offset: 4px;
+  text-decoration-color: #fff;
+}
+
+.carousel-transition-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.carousel-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.carousel-transition-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.carousel-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 500ms, transform 500ms;
+}
