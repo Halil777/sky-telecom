@@ -1,4 +1,10 @@
-import { Button, Container, Divider, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React, { useState } from "react";
 import {
   servicesActiveButton,
@@ -7,15 +13,25 @@ import {
 import ServerComponent from "./ServerComponent.jsx";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import ServicesCarousel from "./ServicesCarousel.jsx";
+import { useTheme } from "@mui/material/styles/";
 
 const Services = () => {
   const [activeButton, setActiveButton] = useState(0);
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleButtonClick = (index) => {
     setActiveButton(index);
   };
   return (
-    <div id="services" style={{ background: "#0A0B0F", paddingTop: "16vh" }}>
+    <div
+      id="services"
+      style={{
+        backgroundColor: theme.palette.background.paper,
+        paddingTop: isMobile ? "12vh" : "15vh",
+      }}
+    >
       <Container>
         <Stack alignItems="center" mb={10}>
           <Stack direction="row" alignItems="center" spacing={2}>
@@ -31,7 +47,13 @@ const Services = () => {
               alt="Rectangle 1.png"
             />
           </Stack>
-          <Typography sx={{ ...text, width: "50%", textAlign: "center" }}>
+          <Typography
+            sx={{
+              ...text,
+              width: isMobile ? "100%" : "50%",
+              textAlign: "center",
+            }}
+          >
             Sky Telecom new hosted payload services introduces the easiest way
             to fly and operate your payload in orbit. The Shared Satellite
             Service eliminates the traditional legal, technologic and logistic

@@ -13,6 +13,7 @@
     "cra-template": "1.2.0",
     "fade": "^0.2.0",
     "formik": "^2.2.9",
+    "framer-motion": "^10.12.16",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.1",

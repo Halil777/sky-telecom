@@ -1,10 +1,18 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { text, titleName } from "../../style/titleName/title.mjs";
+import { useTheme } from "@mui/material/styles/";
 
 const Compony = () => {
+  const theme = useTheme();
   return (
-    <div id="ourCompany" style={{ background: "#0A0B0F", paddingTop: "16vh" }}>
+    <div
+      id="ourCompany"
+      style={{
+        backgroundColor: theme.palette.background.paper,
+        paddingTop: "15vh",
+      }}
+    >
       <Container>
         <Stack direction="row" alignItems="center" spacing={2}>
           <Typography sx={titleName}>our company</Typography>

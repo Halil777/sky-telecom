@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles/";
 
 const footerStyle = {
   background: "#18202B",
@@ -22,9 +23,11 @@ const footerText = {
 };
 
 const Footer = () => {
+  const theme = useTheme();
+
   return (
     <>
-      <Box sx={footerStyle}>
+      <Box sx={{ backgroundColor: theme.palette.background.default }}>
         <Container>
           <Typography sx={footerTitle}>
             Get in touch with us for your service
@@ -36,7 +39,7 @@ const Footer = () => {
           </Typography>
         </Container>
       </Box>
-      <Box sx={{ background: "#0A0B0F" }}>
+      <Box sx={{ backgroundColor: theme.palette.background.paper }}>
         <Container>
           <Typography
             sx={{ ...footerText, paddingTop: "15px", paddingBottom: "15px" }}

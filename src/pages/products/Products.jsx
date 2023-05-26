@@ -1,16 +1,26 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import ProductsCarousel from "./ProductsCarousel.jsx";
+import { useTheme } from "@mui/material/styles/";
 
 const Products = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
-    <div id="products" style={{ background: "#0A0B0F", paddingTop: "16vh" }}>
+    <div
+      id="products"
+      style={{
+        backgroundColor: theme.palette.background.paper,
+        paddingTop: "15vh",
+      }}
+    >
       <Container>
         <Stack
-          direction="row"
-          justifyContent="flex-end"
-          alignItems="center"
+          direction={"row"}
+          justifyContent={isSmallScreen ? "center" : "flex-end"}
+          alignItems={"center"}
           spacing={2}
         >
           <img
@@ -20,8 +30,18 @@ const Products = () => {
           />
           <Typography sx={titleName}>products</Typography>
         </Stack>
-        <Stack direction="row" justifyContent="flex-end" mt={1}>
-          <Typography sx={{ ...text, width: "50%", textAlign: "end" }}>
+        <Stack
+          direction={isSmallScreen ? "column-reverse" : "row"}
+          justifyContent={isSmallScreen ? "center" : "flex-end"}
+          mt={1}
+        >
+          <Typography
+            sx={{
+              ...text,
+              width: isSmallScreen ? "100%" : "50%",
+              textAlign: isSmallScreen ? "center" : "end",
+            }}
+          >
             Sky Telecom new hosted payload services introduces the easiest way
             to fly and operate your payload in orbit. The Shared Satellite
             Service eliminates the traditional legal, technologic and logistic

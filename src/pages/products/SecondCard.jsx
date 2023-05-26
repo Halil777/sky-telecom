@@ -11,7 +11,7 @@ import { text } from "../../style/titleName/title.mjs";
 export const SecondPassiveCard = () => {
   return (
     <>
-      <Box sx={{ ...activeCard, width: "464px", height: "150px" }}>
+      <Box sx={{ ...activeCard, width: "300px", height: "150px" }}>
         <Box
           sx={{
             display: "flex",

@@ -1,12 +1,14 @@
+import { Colors } from "../theme/theme.mjs";
+
 export const titleName = {
   textTransform: "uppercase",
   fontWeight: "700",
   fontSize: "22px",
-  color: "#637381",
+  color: Colors.titleName,
 };
 
 export const text = {
-  color: "#fff",
+  color: Colors.lightText,
   fontSize: "15px",
   fontWeight: "400",
 };
