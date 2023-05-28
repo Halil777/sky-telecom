@@ -1,19 +1,10 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import {
   CustomTextField,
-  accordionStyle,
   passiveText,
   sendMessageButton,
 } from "../../style/products/products.mjs";
@@ -91,7 +82,13 @@ const Contact = () => {
               <Typography sx={titleName}>Contact us</Typography>
             </Stack>
             <Stack direction="row" justifyContent="flex-end" mt={1}>
-              <Typography sx={{ ...text, textAlign: "end" }}>
+              <Typography
+                sx={{
+                  ...text,
+                  textAlign: "end",
+                  color: "customTheme.textColor",
+                }}
+              >
                 Sky Telecom new hosted payload services introduces the easiest
                 way to fly and operate your payload in orbit. The Shared
                 Satellite Service eliminates the traditional legal, technologic
@@ -156,20 +153,22 @@ const Contact = () => {
           <Grid item lg={6} md={6} sm={12} xs={12}>
             <Stack spacing={1}>
               <Typography sx={passiveText}>Address:</Typography>
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Ashgabat city, Maskovsky street <br /> (Bagtyyarlyk Sowda
                 Merkezi) 4th Floor
               </Typography>
             </Stack>
             <Stack spacing={1} mt={3}>
               <Typography sx={passiveText}>Phone:</Typography>
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 +993 63 129804 <br /> +993 61 010005
               </Typography>
             </Stack>
             <Stack spacing={1} mt={3}>
               <Typography sx={passiveText}>Email:</Typography>
-              <Typography sx={text}>info@skytelecom.com</Typography>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+                info@skytelecom.com
+              </Typography>
             </Stack>
           </Grid>
         </Grid>
@@ -210,13 +209,13 @@ const Contact = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -239,10 +238,12 @@ const Contact = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={text}>Lorem Ipsum is simply dummy</Typography>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+                Lorem Ipsum is simply dummy
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.
@@ -265,12 +266,12 @@ const Contact = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Lorem Ipsum is simply dummy text of the printing and
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography sx={text}>
+              <Typography sx={{ ...text, color: "customTheme.textColor" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
                 eget.

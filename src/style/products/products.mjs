@@ -97,9 +97,9 @@ export const sendMessageButton = {
 
 export const CustomSelect = styled(Select)({
   // Your custom styles for Select
-  color: Colors.lightText,
+  color: "customTheme.textColor",
   "& fieldset": { border: "none" },
   "& .MuiSelect-icon": {
-    color: Colors.lightText, // Change the arrow color to #fff
+    color: "customTheme.textColor", // Change the arrow color to #fff
   },
 });

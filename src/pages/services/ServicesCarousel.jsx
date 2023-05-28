@@ -34,7 +34,9 @@ const ServicesCarousel = () => {
               style={{ width: "100%" }}
               src="/images/Group 1.png"
             />
-            <Typography sx={text}>Network</Typography>
+            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+              Network
+            </Typography>
           </Stack>
         </SwiperSlide>
         <SwiperSlide>
@@ -48,7 +50,9 @@ const ServicesCarousel = () => {
               style={{ width: "100%" }}
               src="/images/pngwing 3.png"
             />
-            <Typography sx={text}>Satellite</Typography>
+            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+              Satellite
+            </Typography>
           </Stack>
         </SwiperSlide>
         <SwiperSlide>
@@ -62,7 +66,9 @@ const ServicesCarousel = () => {
               style={{ width: "100%" }}
               src="/images/6502 [Converted] 1.png"
             />
-            <Typography sx={text}>Server</Typography>
+            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+              Server
+            </Typography>
           </Stack>
         </SwiperSlide>
         <SwiperSlide>
@@ -76,7 +82,9 @@ const ServicesCarousel = () => {
               style={{ width: "100%" }}
               src="/images/pngwing 1.png"
             />
-            <Typography sx={text}>Server</Typography>
+            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+              Server
+            </Typography>
           </Stack>
         </SwiperSlide>
       </Swiper>

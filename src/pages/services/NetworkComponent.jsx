@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Stack, Typography } from "@mui/material";
 import { text } from "../../style/titleName/title.mjs";
 
-const ServerComponent = () => {
+const NetworkComponent = () => {
   return (
     <>
       <Grid container pt={3} spacing={4}>
@@ -60,4 +60,4 @@ const ServerComponent = () => {
   );
 };
 
-export default ServerComponent;
+export default NetworkComponent;

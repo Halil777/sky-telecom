@@ -28,6 +28,7 @@ const lightTheme = createTheme({
     },
     customTheme: {
       accordionBg: "#f1f1f1",
+      textColor: Colors.darkText,
     },
   },
 });
@@ -49,12 +50,13 @@ const darkTheme = createTheme({
     },
     customTheme: {
       accordionBg: Colors.PassiveButton,
+      textColor: Colors.lightText,
     },
   },
 });
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const toggleTheme = () => {
     setIsDark((prevIsDark) => !prevIsDark);

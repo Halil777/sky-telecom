@@ -26,7 +26,13 @@ const Compony = () => {
         <Grid container spacing={4}>
           <Grid item md={6} lg={6} sm={12} xs={12}>
             <Stack spacing={2}>
-              <Typography sx={{ ...text, fontSize: "14.7px" }}>
+              <Typography
+                sx={{
+                  ...text,
+                  fontSize: "14.7px",
+                  color: "customTheme.textColor",
+                }}
+              >
                 The National Aeronautics and Space Administration is America’s
                 civil space program and the global leader in space exploration.
                 The agency has a diverse workforce of just under 18,000 civil
@@ -38,7 +44,13 @@ const Compony = () => {
                 312,000 jobs across the United States, generating more than
                 $64.3 billion in total economic output (Fiscal Year 2019).
               </Typography>
-              <Typography sx={{ ...text, fontSize: "14.7px" }}>
+              <Typography
+                sx={{
+                  ...text,
+                  fontSize: "14.7px",
+                  color: "customTheme.textColor",
+                }}
+              >
                 At its 20 centers and facilities across the country – and the
                 only National Laboratory in space – NASA studies Earth,
                 including its climate, our Sun, and our solar system and beyond.
@@ -47,7 +59,13 @@ const Compony = () => {
                 flight. We develop and fund space technologies that will enable
                 future exploration and benefit life on Earth.
               </Typography>
-              <Typography sx={{ ...text, fontSize: "14.7px" }}>
+              <Typography
+                sx={{
+                  ...text,
+                  fontSize: "14.7px",
+                  color: "customTheme.textColor",
+                }}
+              >
                 NASA also leads a Moon to Mars exploration approach, which
                 includes working with U.S. industry, international partners, and
                 academia to develop new technology, and send science research

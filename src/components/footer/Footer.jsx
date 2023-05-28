@@ -42,7 +42,12 @@ const Footer = () => {
       <Box sx={{ backgroundColor: theme.palette.background.paper }}>
         <Container>
           <Typography
-            sx={{ ...footerText, paddingTop: "15px", paddingBottom: "15px" }}
+            sx={{
+              ...footerText,
+              paddingTop: "15px",
+              paddingBottom: "15px",
+              color: "customTheme.textColor",
+            }}
           >
             © 2023 Sky Telecom plaform all Rights Reserved!
           </Typography>

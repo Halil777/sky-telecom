@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { text } from "../../style/titleName/title.mjs";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Colors } from "../../style/theme/theme.mjs";
 
 const Home = () => {
   const theme = useTheme();
@@ -37,12 +38,20 @@ const Home = () => {
           >
             <Stack>
               <Typography
-                sx={{ ...text, fontSize: isMobile ? "16px" : "24px" }}
+                sx={{
+                  ...text,
+                  fontSize: isMobile ? "16px" : "24px",
+                  color: Colors.lightText,
+                }}
               >
                 SKY TELECOM
               </Typography>
               <Typography
-                sx={{ ...text, fontSize: isMobile ? "30px" : "50px" }}
+                sx={{
+                  ...text,
+                  fontSize: isMobile ? "30px" : "50px",
+                  color: Colors.lightText,
+                }}
               >
                 Shaping life experience
               </Typography>

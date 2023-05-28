@@ -52,6 +52,7 @@ const Services = () => {
               ...text,
               width: isMobile ? "100%" : "50%",
               textAlign: "center",
+              color: "customTheme.textColor",
             }}
           >
             Sky Telecom new hosted payload services introduces the easiest way
@@ -91,8 +92,8 @@ const Services = () => {
           </Button>
         </Stack>
         {activeButton === 0 && <ServerComponent />}
-        {activeButton === 1 && <>salam 2</>}
-        {activeButton === 2 && <>salam 3</>}
+        {activeButton === 1 && <ServerComponent />}
+        {activeButton === 2 && <ServerComponent />}
       </Container>
     </div>
   );

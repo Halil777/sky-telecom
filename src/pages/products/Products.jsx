@@ -1,5 +1,5 @@
-import { Container, Stack, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
+import { Container, Stack, Typography, useMediaQuery } from "@mui/material";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import ProductsCarousel from "./ProductsCarousel.jsx";
 import { useTheme } from "@mui/material/styles/";
@@ -40,6 +40,7 @@ const Products = () => {
               ...text,
               width: isSmallScreen ? "100%" : "50%",
               textAlign: isSmallScreen ? "center" : "end",
+              color: "customTheme.textColor",
             }}
           >
             Sky Telecom new hosted payload services introduces the easiest way

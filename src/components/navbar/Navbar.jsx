@@ -103,7 +103,9 @@ const Navbar = (props) => {
                       duration={1000}
                       className="scroll-link"
                     >
-                      <Typography>{t(item.title)}</Typography>
+                      <Typography sx={{ color: "customTheme.textColor" }}>
+                        {t(item.title)}
+                      </Typography>
                     </Link>
                   ))}
                   <CustomSelect
@@ -118,9 +120,9 @@ const Navbar = (props) => {
                   </CustomSelect>
                   <IconButton onClick={handleThemeToggle}>
                     {props.isDark ? (
-                      <LightModeIcon />
+                      <LightModeIcon sx={{ color: "customTheme.textColor" }} />
                     ) : (
-                      <ModeNightIcon sx={{ color: "#fff" }} />
+                      <ModeNightIcon sx={{ color: "customTheme.textColor" }} />
                     )}
                   </IconButton>
                 </Stack>
@@ -167,7 +169,12 @@ const Navbar = (props) => {
                     className="scroll-link"
                     onClick={toggleMobileMenu}
                   >
-                    <Typography sx={{ textAlign: "start" }}>
+                    <Typography
+                      sx={{
+                        textAlign: "start",
+                        color: "customTheme.textColor",
+                      }}
+                    >
                       {t(item.title)}
                     </Typography>
                   </Link>
@@ -189,9 +196,9 @@ const Navbar = (props) => {
                     onClick={handleThemeToggle}
                   >
                     {props.isDark ? (
-                      <LightModeIcon />
+                      <LightModeIcon sx={{ color: "customTheme.textColor" }} />
                     ) : (
-                      <ModeNightIcon sx={{ color: "#fff" }} />
+                      <ModeNightIcon sx={{ color: "customTheme.textColor" }} />
                     )}
                   </IconButton>
                 </Stack>

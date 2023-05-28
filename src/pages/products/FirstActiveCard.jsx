@@ -23,7 +23,9 @@ export const FirstPassiveCard = () => {
         >
           <Stack>
             <Typography sx={passiveText}>Q3 2023</Typography>
-            <Typography sx={activeText}>Platform 4</Typography>
+            <Typography sx={{ ...activeText, color: "customTheme.textColor" }}>
+              Platform 4
+            </Typography>
           </Stack>
         </Box>
       </Box>
@@ -41,7 +43,11 @@ const FirstActiveCard = () => {
               <Typography sx={{ ...passiveText, pt: 2, pl: 2 }}>
                 Q3 2023
               </Typography>
-              <Typography sx={{ ...activeText, pl: 2 }}>Platform 4</Typography>
+              <Typography
+                sx={{ ...activeText, pl: 2, color: "customTheme.textColor" }}
+              >
+                Platform 4
+              </Typography>
 
               <img
                 src="/images/pngwing 1.png"
