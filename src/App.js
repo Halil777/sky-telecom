@@ -11,6 +11,9 @@ import { Colors } from "./style/theme/theme.mjs";
 import { useState } from "react";
 
 const lightTheme = createTheme({
+  typography: {
+    fontFamily: "AppRegular",
+  },
   palette: {
     mode: "light",
     primary: {
@@ -29,11 +32,15 @@ const lightTheme = createTheme({
     customTheme: {
       accordionBg: "#f1f1f1",
       textColor: Colors.darkText,
+      accordionIconBg: Colors.titleName,
     },
   },
 });
 
 const darkTheme = createTheme({
+  typography: {
+    fontFamily: "AppRegular",
+  },
   palette: {
     mode: "dark",
     primary: {
@@ -51,6 +58,7 @@ const darkTheme = createTheme({
     customTheme: {
       accordionBg: Colors.PassiveButton,
       textColor: Colors.lightText,
+      accordionIconBg: Colors.darkText,
     },
   },
 });
@@ -61,7 +69,7 @@ function App() {
   const toggleTheme = () => {
     setIsDark((prevIsDark) => !prevIsDark);
   };
-
+  console.clear();
   return (
     <>
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>

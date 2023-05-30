@@ -19,13 +19,13 @@ export const navbarItems = [
 
   {
     id: 4,
-    title: "contactUs",
-    link: "contactUs",
+    title: "services",
+    link: "services",
   },
 
   {
     id: 5,
-    title: "services",
-    link: "services",
+    title: "contactUs",
+    link: "contactUs",
   },
 ];

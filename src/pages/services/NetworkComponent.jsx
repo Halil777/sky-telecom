@@ -46,7 +46,7 @@ const NetworkComponent = () => {
         </Grid>
       </Grid>
       <Stack mt={2}>
-        <Typography sx={{ color: "#fff", fontWeight: "700" }}>
+        <Typography sx={{ color: "customTheme.textColor", fontWeight: "700" }}>
           NASA also leads a Moon to Mars exploration approach
         </Typography>
         <Typography sx={{ ...text, color: "customTheme.textColor" }}>

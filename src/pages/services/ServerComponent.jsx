@@ -46,9 +46,10 @@ const ServerComponent = () => {
         </Grid>
       </Grid>
       <Stack mt={2}>
-        <Typography sx={{ color: "#fff", fontWeight: "700" }}>
+        <Typography sx={{ color: "customTheme.textColor", fontWeight: "700" }}>
           NASA also leads a Moon to Mars exploration approach
         </Typography>
+        <br />
         <Typography sx={{ ...text, color: "customTheme.textColor" }}>
           The National Aeronautics and Space Administration is America’s civil
           space program and the global leader in space exploration. The agency

@@ -1,20 +1,34 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import React from "react";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import { useTheme } from "@mui/material/styles/";
 
 const Compony = () => {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <div
       id="ourCompany"
       style={{
         backgroundColor: theme.palette.background.paper,
-        paddingTop: "15vh",
+        paddingTop: isSmallScreen ? "4vh" : "40vh",
       }}
     >
       <Container>
-        <Stack direction="row" alignItems="center" spacing={2}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent={isSmallScreen ? "center" : ""}
+          spacing={2}
+        >
           <Typography sx={titleName}>our company</Typography>
           <img
             style={{ width: "90px" }}
@@ -29,7 +43,6 @@ const Compony = () => {
               <Typography
                 sx={{
                   ...text,
-                  fontSize: "14.7px",
                   color: "customTheme.textColor",
                 }}
               >
@@ -47,7 +60,6 @@ const Compony = () => {
               <Typography
                 sx={{
                   ...text,
-                  fontSize: "14.7px",
                   color: "customTheme.textColor",
                 }}
               >
@@ -62,7 +74,6 @@ const Compony = () => {
               <Typography
                 sx={{
                   ...text,
-                  fontSize: "14.7px",
                   color: "customTheme.textColor",
                 }}
               >
@@ -82,7 +93,10 @@ const Compony = () => {
             </Stack>
           </Grid>
           <Grid item md={6} lg={6} sm={12} xs={12}>
-            <Stack direction="row" justifyContent="flex-end">
+            <Stack
+              direction="row"
+              justifyContent={{ md: "flex-end", sm: "center", xs: "center" }}
+            >
               <img
                 style={{ width: "90%" }}
                 src="/images/Group 1 (3).png"

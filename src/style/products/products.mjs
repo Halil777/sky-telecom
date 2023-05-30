@@ -27,7 +27,7 @@ export const nextButtonStyle = {
 
 export const activeCard = {
   background: Colors.PassiveButton,
-  width: "730px",
+  width: "100%",
   height: "390px",
 };
 
@@ -63,7 +63,7 @@ export const yupInputStyle = {
 };
 
 export const CustomTextField = styled(TextField)({
-  background: Colors.PassiveButton,
+  "& fieldset": { border: "none" },
   borderRadius: 0,
   color: Colors.titleName,
   "& .MuiInputLabel-root": {
@@ -97,9 +97,9 @@ export const sendMessageButton = {
 
 export const CustomSelect = styled(Select)({
   // Your custom styles for Select
-  color: "customTheme.textColor",
+  color: Colors.lightText,
   "& fieldset": { border: "none" },
   "& .MuiSelect-icon": {
-    color: "customTheme.textColor", // Change the arrow color to #fff
+    color: Colors.lightText, // Change the arrow color to #fff
   },
 });

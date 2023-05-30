@@ -1,7 +1,18 @@
+@font-face {
+  font-family: "AppRegular";
+  src: url("./assets/fonts/SFPRODISPLAYREGULAR.OTF");
+  font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "AppRegular";
+}
+
+body {
+  font-family: "AppRegular";
 }
 
 .scroll-link {

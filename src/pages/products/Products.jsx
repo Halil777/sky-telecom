@@ -13,7 +13,7 @@ const Products = () => {
       id="products"
       style={{
         backgroundColor: theme.palette.background.paper,
-        paddingTop: "15vh",
+        paddingTop: isSmallScreen ? "2vh" : "15vh",
       }}
     >
       <Container>

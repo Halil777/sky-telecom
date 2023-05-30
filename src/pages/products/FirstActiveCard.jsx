@@ -7,11 +7,21 @@ import {
   readMoreButton,
 } from "../../style/products/products.mjs";
 import { text } from "../../style/titleName/title.mjs";
+import { useTheme } from "@mui/material/styles/";
 
 export const FirstPassiveCard = () => {
+  const theme = useTheme();
+
   return (
     <>
-      <Box sx={{ ...activeCard, width: "300px", height: "150px" }}>
+      <Box
+        sx={{
+          ...activeCard,
+          width: "100%",
+          height: "150px",
+          backgroundColor: theme.palette.customTheme.accordionBg,
+        }}
+      >
         <Box
           sx={{
             display: "flex",
@@ -33,10 +43,17 @@ export const FirstPassiveCard = () => {
   );
 };
 
-const FirstActiveCard = () => {
+const FirstActiveCard = (props) => {
+  const { item } = props;
+  const theme = useTheme();
   return (
     <>
-      <Box sx={activeCard}>
+      <Box
+        sx={{
+          ...activeCard,
+          backgroundColor: theme.palette.customTheme.accordionBg,
+        }}
+      >
         <Grid container>
           <Grid item lg={6} md={6}>
             <Stack spacing={1}>
@@ -46,11 +63,11 @@ const FirstActiveCard = () => {
               <Typography
                 sx={{ ...activeText, pl: 2, color: "customTheme.textColor" }}
               >
-                Platform 4
+                {item.title}
               </Typography>
 
               <img
-                src="/images/pngwing 1.png"
+                src={item.image}
                 style={{ width: "100%" }}
                 alt="pngwing 1.png"
               />

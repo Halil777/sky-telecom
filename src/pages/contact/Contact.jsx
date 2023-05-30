@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -14,11 +22,14 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useTheme } from "@mui/material/styles/";
+
 const Contact = () => {
   const [expanded, setExpanded] = useState(false);
   const [expanded1, setExpanded1] = useState(false);
   const [expanded2, setExpanded2] = useState(false);
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   const handleChange = () => {
     setExpanded(!expanded);
   };
@@ -54,10 +65,10 @@ const Contact = () => {
       id="contactUs"
       style={{
         backgroundColor: theme.palette.background.paper,
-        paddingTop: "16vh",
+        paddingTop: isSmallScreen ? "7vh" : "30vh",
       }}
     >
-      <Box p={2}>
+      <Box p={2} display={isSmallScreen ? "none" : ""}>
         <img
           src="/images/Dotted Shape.png"
           alt="Dotted Shape"
@@ -65,13 +76,13 @@ const Contact = () => {
         />
       </Box>
       <Container>
-        <Grid container mt={-30} mb={6}>
+        <Grid container mt={isSmallScreen ? 0 : -30} mb={6}>
           <Grid lg={6} md={6} sm={12} xs={12}></Grid>
           <Grid lg={6} md={6} sm={12} xs={12}>
             <Stack
               direction="row"
               alignItems="center"
-              justifyContent="flex-end"
+              justifyContent={isSmallScreen ? "center" : "flex-end"}
               spacing={2}
             >
               <img
@@ -85,7 +96,7 @@ const Contact = () => {
               <Typography
                 sx={{
                   ...text,
-                  textAlign: "end",
+                  textAlign: isSmallScreen ? "center" : "end",
                   color: "customTheme.textColor",
                 }}
               >
@@ -101,6 +112,7 @@ const Contact = () => {
           <Grid item lg={6} md={6} sm={12} xs={12}>
             <Stack spacing={1} mb={2}>
               <CustomTextField
+                sx={{ backgroundColor: theme.palette.customTheme.accordionBg }}
                 fullWidth
                 name="fullName"
                 label="Your full Name"
@@ -116,6 +128,7 @@ const Contact = () => {
                 type="text"
               />
               <CustomTextField
+                sx={{ backgroundColor: theme.palette.customTheme.accordionBg }}
                 fullWidth
                 name="email"
                 label="Your Email"
@@ -129,6 +142,7 @@ const Contact = () => {
                 type="text"
               />
               <CustomTextField
+                sx={{ backgroundColor: theme.palette.customTheme.accordionBg }}
                 fullWidth
                 name="message"
                 label="Message"
@@ -192,7 +206,7 @@ const Contact = () => {
             alt="Rectangle 1.png"
           />
         </Stack>
-        <Stack spacing={2.5} pb={15} mt={2}>
+        <Stack spacing={2.5} pb={isSmallScreen ? 7 : 15} mt={2}>
           <Accordion
             sx={{ backgroundColor: theme.palette.customTheme.accordionBg }}
             expanded={expanded}
@@ -201,9 +215,21 @@ const Contact = () => {
             <AccordionSummary
               expandIcon={
                 expanded ? (
-                  <RemoveIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <RemoveIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 ) : (
-                  <AddIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <AddIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 )
               }
               aria-controls="panel1a-content"
@@ -230,9 +256,21 @@ const Contact = () => {
             <AccordionSummary
               expandIcon={
                 expanded1 ? (
-                  <RemoveIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <RemoveIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 ) : (
-                  <AddIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <AddIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 )
               }
               aria-controls="panel1a-content"
@@ -258,9 +296,21 @@ const Contact = () => {
             <AccordionSummary
               expandIcon={
                 expanded2 ? (
-                  <RemoveIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <RemoveIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 ) : (
-                  <AddIcon sx={{ background: "#0A0B0F", color: "#fff" }} />
+                  <AddIcon
+                    sx={{
+                      backgroundColor:
+                        theme.palette.customTheme.accordionIconBg,
+                      color: "#fff",
+                    }}
+                  />
                 )
               }
               aria-controls="panel1a-content"

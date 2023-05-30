@@ -1,61 +1,19 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import "swiper/css";
-import { useMediaQuery, Stack, Typography } from "@mui/material";
+import { useMediaQuery, Stack, Typography, Grid } from "@mui/material";
 import { text } from "../../style/titleName/title.mjs";
 
 const ServicesCarousel = () => {
   const isMobile = useMediaQuery("(max-width: 600px)");
-  const slidesPerView = isMobile ? 1 : 3;
 
   return (
     <div style={{ marginBottom: "50px" }}>
-      <Swiper
-        spaceBetween={200}
-        slidesPerView={slidesPerView}
-        loop
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
+      <Grid
+        container
+        alignItems="center"
+        spacing={isMobile ? 5 : 20}
+        width="100%"
       >
-        <SwiperSlide>
-          <Stack
-            alignItems="center"
-            spacing={2}
-            direction={isMobile ? "column" : "row"}
-          >
-            <img
-              alt="group"
-              style={{ width: "100%" }}
-              src="/images/Group 1.png"
-            />
-            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
-              Network
-            </Typography>
-          </Stack>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Stack
-            alignItems="center"
-            spacing={2}
-            direction={isMobile ? "column" : "row"}
-          >
-            <img
-              alt="group"
-              style={{ width: "100%" }}
-              src="/images/pngwing 3.png"
-            />
-            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
-              Satellite
-            </Typography>
-          </Stack>
-        </SwiperSlide>
-        <SwiperSlide>
+        <Grid item lg={4} md={4} sm={6} xs={6}>
           <Stack
             alignItems="center"
             spacing={2}
@@ -70,8 +28,8 @@ const ServicesCarousel = () => {
               Server
             </Typography>
           </Stack>
-        </SwiperSlide>
-        <SwiperSlide>
+        </Grid>
+        <Grid item lg={4} md={4} sm={6} xs={6}>
           <Stack
             alignItems="center"
             spacing={2}
@@ -80,14 +38,30 @@ const ServicesCarousel = () => {
             <img
               alt="group"
               style={{ width: "100%" }}
-              src="/images/pngwing 1.png"
+              src="/images/Group 1.png"
             />
             <Typography sx={{ ...text, color: "customTheme.textColor" }}>
-              Server
+              Network
             </Typography>
           </Stack>
-        </SwiperSlide>
-      </Swiper>
+        </Grid>
+        <Grid item lg={4} md={4} sm={6} xs={12}>
+          <Stack
+            alignItems="center"
+            spacing={2}
+            direction={isMobile ? "column" : "row"}
+          >
+            <img
+              alt="group"
+              style={{ width: isMobile ? "50%" : "100%" }}
+              src="/images/pngwing 3.png"
+            />
+            <Typography sx={{ ...text, color: "customTheme.textColor" }}>
+              Satellite
+            </Typography>
+          </Stack>
+        </Grid>
+      </Grid>
     </div>
   );
 };

@@ -15,10 +15,9 @@ import { CustomSelect } from "../../style/products/products.mjs";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme } from "@mui/material/styles/";
+import { Colors } from "../../style/theme/theme.mjs";
 
 const Navbar = (props) => {
-  const theme = useTheme();
   const { t, i18n } = useTranslation();
   const [selectedOption, setSelectedOption] = useState(i18n.language);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,8 +66,8 @@ const Navbar = (props) => {
               : "rgba(0, 0, 0, 0.2)", // Darker color for light mode
           transition: "background-color 0.5s",
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-          backdropFilter: "blur(5px)", // Add blur effect
-          filter: "brightness(90%)", // Add filter effect
+          backdropFilter: scrollPosition === 0 ? "" : "blur(5px)", // Add blur effect
+          filter: scrollPosition === 0 ? "" : "brightness(90%)", // Add filter effect
         }}
       >
         <Box>
@@ -103,7 +102,7 @@ const Navbar = (props) => {
                       duration={1000}
                       className="scroll-link"
                     >
-                      <Typography sx={{ color: "customTheme.textColor" }}>
+                      <Typography sx={{ color: Colors.lightText }}>
                         {t(item.title)}
                       </Typography>
                     </Link>
@@ -120,9 +119,9 @@ const Navbar = (props) => {
                   </CustomSelect>
                   <IconButton onClick={handleThemeToggle}>
                     {props.isDark ? (
-                      <LightModeIcon sx={{ color: "customTheme.textColor" }} />
+                      <LightModeIcon sx={{ color: Colors.lightText }} />
                     ) : (
-                      <ModeNightIcon sx={{ color: "customTheme.textColor" }} />
+                      <ModeNightIcon sx={{ color: Colors.lightText }} />
                     )}
                   </IconButton>
                 </Stack>
@@ -130,6 +129,7 @@ const Navbar = (props) => {
                   onClick={toggleMobileMenu}
                   sx={{
                     display: { xs: "flex", md: "none" },
+                    color: "#FFFFFF",
                   }}
                 >
                   <MenuIcon />
@@ -181,7 +181,14 @@ const Navbar = (props) => {
                 ))}
                 <Stack direction="row" spacing={3}>
                   <CustomSelect
-                    sx={{ width: "100px" }}
+                    sx={{
+                      width: "100px",
+                      color: "customTheme.textColor",
+                      "& fieldset": { border: "none" },
+                      "& .MuiSelect-icon": {
+                        color: "customTheme.textColor", // Change the arrow color to #fff
+                      },
+                    }}
                     labelId="select-label"
                     MenuProps={{ disableScrollLock: true }}
                     value={selectedOption}

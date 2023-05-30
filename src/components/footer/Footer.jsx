@@ -2,10 +2,6 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles/";
 
-const footerStyle = {
-  background: "#18202B",
-};
-
 const footerTitle = {
   color: "#fff",
   fontWeight: "500",
@@ -19,7 +15,6 @@ const footerText = {
   fontWeight: "400",
   fontSize: "16px",
   width: "82%",
-  paddingBottom: "30px",
 };
 
 const Footer = () => {
@@ -37,15 +32,21 @@ const Footer = () => {
             huge growth in turnovers and volumes of operation. Our company was
             established 15 July 2011.
           </Typography>
+          <br />
         </Container>
       </Box>
-      <Box sx={{ backgroundColor: theme.palette.background.paper }}>
+      <Box
+        sx={{
+          backgroundColor: theme.palette.background.paper,
+          height: "57px",
+          alignItems: "center",
+          display: "flex",
+        }}
+      >
         <Container>
           <Typography
             sx={{
               ...footerText,
-              paddingTop: "15px",
-              paddingBottom: "15px",
               color: "customTheme.textColor",
             }}
           >

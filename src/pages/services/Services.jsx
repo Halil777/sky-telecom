@@ -29,7 +29,7 @@ const Services = () => {
       id="services"
       style={{
         backgroundColor: theme.palette.background.paper,
-        paddingTop: isMobile ? "12vh" : "15vh",
+        paddingTop: isMobile ? "12vh" : "30vh",
       }}
     >
       <Container>
