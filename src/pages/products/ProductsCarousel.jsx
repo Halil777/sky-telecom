@@ -1,92 +1,148 @@
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
-import "swiper/css";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import {
+  nextButtonStyle,
+  prevButtonStyle,
+} from "../../style/products/products.mjs";
 import FirstActiveCard, { FirstPassiveCard } from "./FirstActiveCard.jsx";
-import { Box, Grid } from "@mui/material";
-
-const items = [
-  {
-    title: "Platform 1",
-    image: "/images/png.png",
-  },
-  {
-    title: "Platform 2",
-    image: "/images/pngwing 1.png",
-  },
-  {
-    title: "Platform 3",
-    image: "/images/pngwing 3.png",
-  },
-  {
-    title: "Platform 4",
-    image: "/images/imagee.png",
-  },
-];
+import SecondCard, { SecondPassiveCard } from "./SecondCard.jsx";
+import ThirdCard, { ThirdPassiveCard } from "./ThirdCard.jsx";
+import { IconButton, Stack } from "@mui/material";
 
 const ProductsCarousel = () => {
-  const [active, setActive] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleSlideChange = () => {
-    console.log("slide change");
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % 3);
+    }, 5000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const handlePrevClick = () => {
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? 2 : prevIndex - 1));
   };
 
-  const handleSwiper = (swiper) => {
-    console.log(swiper);
+  const handleNextClick = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % 3);
   };
 
-  const handleSlideActive = (i) => {
-    setActive(i);
+  const transition = {
+    duration: 0.5,
+    ease: "easeInOut",
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Swiper
-        spaceBetween={10}
-        autoplay={true}
-        slidesPerView={3}
-        autoHeight={true}
-        modules={[Autoplay]}
-        loop
-        onSlideChange={handleSlideChange}
-        onSwiper={handleSwiper}
-      >
-        {items.map((item, i) => (
-          <SwiperSlide
-            key={i}
-            style={{ width: active === i ? "100%" : "100%" }}
-          >
-            {({ isActive }) => {
-              if (isActive) {
-                handleSlideActive(i);
-              }
-
-              return (
-                <>
-                  <Grid container sx={{ width: "100%" }}>
-                    <Grid item lg={7} sm={7} xs={12} width="100%">
-                      {isActive ? (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.1 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 1 }}
-                        >
-                          <FirstActiveCard item={item} />
-                        </motion.div>
-                      ) : null}
-                    </Grid>
-                    <Grid item lg={5} sm={5} xs={12}>
-                      {!isActive ? <FirstPassiveCard item={item} /> : null}
-                    </Grid>
-                  </Grid>
-                </>
-              );
-            }}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Box>
+    <>
+      <div>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          spacing={2}
+          mt={5}
+          p={3.2}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={transition}
+            >
+              {activeIndex === 0 ? (
+                <FirstActiveCard />
+              ) : activeIndex === 1 ? (
+                <SecondCard />
+              ) : (
+                <ThirdCard />
+              )}
+            </motion.div>
+          </AnimatePresence>
+          <AnimatePresence mode="wait">
+            {activeIndex === 0 ? (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <SecondPassiveCard />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <ThirdPassiveCard />
+                </motion.div>
+              </>
+            ) : activeIndex === 1 ? (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <ThirdPassiveCard />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <FirstPassiveCard />
+                </motion.div>
+              </>
+            ) : (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <FirstPassiveCard />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={transition}
+                >
+                  <SecondPassiveCard />
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </Stack>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          spacing={2}
+          mt={-30}
+          mb={40}
+        >
+          <IconButton sx={prevButtonStyle} onClick={handlePrevClick}>
+            <ArrowBackIosIcon sx={{ fontSize: "10px" }} />
+          </IconButton>
+          <IconButton sx={nextButtonStyle} onClick={handleNextClick}>
+            <ArrowForwardIosIcon sx={{ fontSize: "10px" }} />
+          </IconButton>
+        </Stack>
+      </div>
+    </>
   );
 };
 

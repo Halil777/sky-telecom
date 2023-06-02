@@ -23,9 +23,9 @@ const Home = () => {
       }}
     >
       <img
-        style={{ width: "100%" }}
         src="/images/Untitled (1).png"
         alt="Untitled"
+        style={{ width: "100%" }}
       />
       <Container>
         <Box sx={{ position: "absolute", top: 0 }}>

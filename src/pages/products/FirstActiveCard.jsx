@@ -7,21 +7,11 @@ import {
   readMoreButton,
 } from "../../style/products/products.mjs";
 import { text } from "../../style/titleName/title.mjs";
-import { useTheme } from "@mui/material/styles/";
 
 export const FirstPassiveCard = () => {
-  const theme = useTheme();
-
   return (
     <>
-      <Box
-        sx={{
-          ...activeCard,
-          width: "100%",
-          height: "150px",
-          backgroundColor: theme.palette.customTheme.accordionBg,
-        }}
-      >
+      <Box sx={{ ...activeCard, width: "300px", height: "150px" }}>
         <Box
           sx={{
             display: "flex",
@@ -33,9 +23,7 @@ export const FirstPassiveCard = () => {
         >
           <Stack>
             <Typography sx={passiveText}>Q3 2023</Typography>
-            <Typography sx={{ ...activeText, color: "customTheme.textColor" }}>
-              Platform 4
-            </Typography>
+            <Typography sx={activeText}>Platform 4</Typography>
           </Stack>
         </Box>
       </Box>
@@ -43,33 +31,21 @@ export const FirstPassiveCard = () => {
   );
 };
 
-const FirstActiveCard = (props) => {
-  const { item } = props;
-  const theme = useTheme();
+const FirstActiveCard = () => {
   return (
     <>
-      <Box
-        sx={{
-          ...activeCard,
-          backgroundColor: theme.palette.customTheme.accordionBg,
-        }}
-      >
+      <Box sx={activeCard}>
         <Grid container>
           <Grid item lg={6} md={6}>
             <Stack spacing={1}>
               <Typography sx={{ ...passiveText, pt: 2, pl: 2 }}>
                 Q3 2023
               </Typography>
-              <Typography
-                sx={{ ...activeText, pl: 2, color: "customTheme.textColor" }}
-              >
-                {item.title}
-              </Typography>
-
+              <Typography sx={{ ...activeText, pl: 2 }}>Platform 4</Typography>
               <img
-                src={item.image}
+                src="/images/pngwing 3.png"
                 style={{ width: "100%" }}
-                alt="pngwing 1.png"
+                alt="ppngwing 3.png"
               />
             </Stack>
           </Grid>
