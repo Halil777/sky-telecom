@@ -1,8 +1,15 @@
 import React from "react";
-import { Container, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { text, titleName } from "../../style/titleName/title.mjs";
 import ProductsCarousel from "./ProductsCarousel.jsx";
 import { useTheme } from "@mui/material/styles/";
+import MobileProductCarousel from "./MobileProductCarousel.jsx";
 
 const Products = () => {
   const theme = useTheme();
@@ -49,9 +56,18 @@ const Products = () => {
             and logistic complexity from your mission.
           </Typography>
         </Stack>
-        <Stack mt={5}>
-          <ProductsCarousel />
-        </Stack>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
+          {isSmallScreen && (
+            <Stack>
+              <MobileProductCarousel />
+            </Stack>
+          )}
+          {!isSmallScreen && (
+            <Stack>
+              <ProductsCarousel />
+            </Stack>
+          )}
+        </Box>
       </Container>
     </div>
   );
