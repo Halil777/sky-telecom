@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e0e320b7.css",
+    "main.js": "/static/js/main.ca24946b.js",
+    "static/media/SFPRODISPLAYREGULAR.OTF": "/static/media/SFPRODISPLAYREGULAR.d1f5e6e16dd4f75c3950.OTF",
+    "index.html": "/index.html",
+    "main.e0e320b7.css.map": "/static/css/main.e0e320b7.css.map",
+    "main.ca24946b.js.map": "/static/js/main.ca24946b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0e320b7.css",
+    "static/js/main.ca24946b.js"
+  ]
+}
