@@ -26,7 +26,6 @@ const lightTheme = createTheme({
     },
     background: {
       paper: Colors.lightText,
-
       default: Colors.darkText,
     },
     customTheme: {

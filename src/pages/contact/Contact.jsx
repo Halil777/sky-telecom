@@ -22,6 +22,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useTheme } from "@mui/material/styles/";
+import axios from "axios";
 
 const Contact = () => {
   const [expanded, setExpanded] = useState(false);
@@ -60,6 +61,23 @@ const Contact = () => {
       resetForm();
     },
   });
+
+  const handleSendMessage = () => {
+    axios
+      .post("/send-email", {
+        fullName: formik.values.fullName,
+        email: formik.values.email,
+        message: formik.values.message,
+      })
+      .then((response) => {
+        console.log(response.data); // Email sent successfully
+        // Handle success, e.g., show a success message or redirect the user
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle error, e.g., show an error message to the user
+      });
+  };
   return (
     <div
       id="contactUs"
@@ -159,7 +177,12 @@ const Contact = () => {
               />
             </Stack>
             <Stack>
-              <Button fullWidth variant="contained" sx={sendMessageButton}>
+              <Button
+                fullWidth
+                onClick={handleSendMessage}
+                variant="contained"
+                sx={sendMessageButton}
+              >
                 Send your message
               </Button>
             </Stack>

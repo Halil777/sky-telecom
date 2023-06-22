@@ -10,10 +10,12 @@ import {
 import { text } from "../../style/titleName/title.mjs";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Colors } from "../../style/theme/theme.mjs";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { t } = useTranslation();
 
   return (
     <div
@@ -42,9 +44,10 @@ const Home = () => {
                   ...text,
                   fontSize: isMobile ? "16px" : "24px",
                   color: Colors.lightText,
+                  textTransform: "uppercase	",
                 }}
               >
-                SKY TELECOM
+                {t("skyTelecom")}
               </Typography>
               <Typography
                 sx={{

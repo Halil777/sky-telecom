@@ -75,7 +75,7 @@ const MobileProductCarousel = () => {
               width: "8px",
               height: "8px",
               borderRadius: "50%",
-              backgroundColor: index === activeIndex ? "#fff" : "red",
+              backgroundColor: index === activeIndex ? "#00349A" : "#FFFFFF",
               mx: 1,
               cursor: "pointer",
             }}

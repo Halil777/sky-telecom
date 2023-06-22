@@ -1,5 +1,5 @@
 import React from "react";
-import { useMediaQuery, Stack, Typography, Grid } from "@mui/material";
+import { useMediaQuery, Stack, Typography, Grid, Box } from "@mui/material";
 import { text } from "../../style/titleName/title.mjs";
 
 const ServicesCarousel = () => {

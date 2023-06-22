@@ -10,6 +10,7 @@ const resources = {
       ourCompany: "Our Company",
       contactUs: " Contact Us",
       services: "Services",
+      skyTelecom: "sky telecom",
 
       // Navbar section ends here ...
     },
@@ -23,6 +24,7 @@ const resources = {
       ourCompany: "Наша компания",
       contactUs: "Связаться с нами",
       services: "Услуги",
+      skyTelecom: "sky telecom",
 
       // Navbar section ends here .....
     },
@@ -36,6 +38,7 @@ const resources = {
       ourCompany: "Biziň Kompaniýamyz",
       contactUs: "Habarlaşmak",
       services: "Hyzmatlar",
+      skyTelecom: "sky telecom",
 
       // Navbar section ends here .....
     },

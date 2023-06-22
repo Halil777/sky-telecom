@@ -1,16 +1,17 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import {
-  activeCard,
   activeText,
   passiveText,
   readMoreButton,
 } from "../../style/products/products.mjs";
 import { text } from "../../style/titleName/title.mjs";
 import { motion } from "framer-motion";
-import { Colors } from "../../style/theme/theme.mjs";
+import { useTheme } from "@mui/material/styles/";
 
 export const FirstPassiveCard = () => {
+  const theme = useTheme();
+
   return (
     <>
       <motion.div
@@ -21,7 +22,7 @@ export const FirstPassiveCard = () => {
         style={{
           width: "100%",
           height: "150px",
-          background: Colors.PassiveButton,
+          backgroundColor: theme.palette.customTheme.accordionBg,
         }}
       >
         <Box
@@ -31,7 +32,7 @@ export const FirstPassiveCard = () => {
             justifyContent: "center",
             width: "100%",
             height: "150px",
-            background: Colors.PassiveButton,
+            backgroundColor: theme.palette.customTheme.accordionBg,
           }}
         >
           <Stack>
@@ -45,6 +46,8 @@ export const FirstPassiveCard = () => {
 };
 
 const FirstActiveCard = () => {
+  const theme = useTheme();
+
   return (
     <>
       <motion.div
@@ -53,7 +56,7 @@ const FirstActiveCard = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <Box sx={activeCard}>
+        <Box sx={{ backgroundColor: theme.palette.customTheme.accordionBg }}>
           <Grid container>
             <Grid item lg={6} md={6}>
               <Stack spacing={1}>

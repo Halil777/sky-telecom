@@ -26,7 +26,6 @@ export const nextButtonStyle = {
 };
 
 export const activeCard = {
-  background: Colors.PassiveButton,
   height: "390px",
 };
 
