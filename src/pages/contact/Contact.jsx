@@ -156,7 +156,7 @@ const Contact = () => {
                 onBlur={formik.handleBlur}
                 error={formik.touched.email && Boolean(formik.errors.email)}
                 helperText={formik.touched.email && formik.errors.email}
-                placeholder="Your Email"
+                placeholder="Your Email Address"
                 type="text"
               />
               <CustomTextField
